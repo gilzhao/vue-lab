@@ -1,0 +1,29 @@
+<html>
+
+<head>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+
+<body>
+  <div id="example-3">
+    <button v-on:click="say('hi')">hi</button>
+    <button v-on:click="say('hello')">hello</button>
+    <button v-on:click="warn('Form cannot be submitted yet.', $event)">submit</button>
+  </div>
+  <script>
+    var example2 = new Vue({
+      el: '#example-3',
+      methods: {
+        say: function(message) {
+          alert(message)
+        },
+        warn: function(message, event) {
+          if (event) event.preventDefault()
+          alert(message)
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
