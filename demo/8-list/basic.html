@@ -1,0 +1,30 @@
+<html>
+
+<head>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+
+<body>
+  <ul id="example-1">
+    <li v-for="(item, index) of items">
+      <!--{{ item.message }}-->
+      {{ parentMessage }} - {{ index }} - {{ item.message }}
+    </li>
+  </ul>
+
+  <script>
+    var example1 = new Vue({
+      el: '#example-1',
+      data: {
+        parentMessage: '父作用域',
+        items: [{
+          message: '苹果'
+        }, {
+          message: '香蕉'
+        }]
+      }
+    })
+  </script>
+</body>
+
+</html>
