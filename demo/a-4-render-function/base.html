@@ -1,0 +1,35 @@
+<html>
+
+<head>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+
+<body>
+  <div id="example">
+    <anchored-heading :level="2">Hello world!</anchored-heading>
+  </div>
+  <script>
+    Vue.component('anchored-heading', {
+      render: function(createElement) {
+        return createElement(
+          'h' + this.level,
+          this.$slots.default
+        )
+      },
+      props: {
+        level: {
+          type: Number,
+          required: true
+        }
+      }
+    })
+    var vm = new Vue({
+      el: '#example',
+      data: {
+        level: 1
+      }
+    })
+  </script>
+</body>
+
+</html>
